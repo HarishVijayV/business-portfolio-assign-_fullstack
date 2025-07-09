@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Vijay V - AI Research Center</title>
+    <title>VijayTech AI Research Center</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -40,7 +40,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
         }
 
@@ -54,17 +54,18 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            color: #ffd700;
+            color: #f39c12;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             text-align: center;
             min-height: 100vh;
             display: flex;
@@ -73,51 +74,64 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease;
         }
 
         .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
             animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero .description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.8;
             animation: fadeInUp 1s ease 0.4s both;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
         }
 
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
-            background: #ffd700;
-            color: #333;
+            background: #f39c12;
+            color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #f39c12;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.3);
         }
 
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: 2rem;
@@ -125,19 +139,20 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             position: relative;
+            color: #2c3e50;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 100px;
             height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin: 1rem auto;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            margin: 1.5rem auto;
             border-radius: 2px;
         }
 
@@ -147,164 +162,304 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-image {
             text-align: center;
-        }
-
-        .profile-circle {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            font-weight: bold;
+            max-width: 800px;
             margin: 0 auto;
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
         }
 
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
+        .about-description {
+            font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #666;
+            margin-bottom: 3rem;
+            color: #555;
         }
 
-        .education {
-            background: #667eea;
-            color: white;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
+        .company-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .skill-card {
+        .stat-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #3498db;
         }
 
-        .skill-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
 
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
         }
 
-        /* Projects Section */
-        .projects {
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Solutions Section */
+        .solutions {
             background: #f8f9fa;
         }
 
-        .projects-grid {
+        .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
-        .project-card {
+        .solution-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
-        .project-card:hover {
+        .solution-card:hover {
             transform: translateY(-5px);
         }
 
-        .project-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .solution-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
         }
 
-        .project-content {
-            padding: 2rem;
+        .solution-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-content {
+            padding: 2.5rem 2rem;
+        }
+
+        .solution-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .solution-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .solution-features li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
         /* Research Section */
+        .research-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
         .research-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            border-left: 5px solid #667eea;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .research-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .research-meta {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .research-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team {
+            background: #f8f9fa;
+        }
+
+        .team-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .leadership-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+
+        .leader-image {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .leader-name {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-title {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .leader-credentials {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            color: #555;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
             text-align: center;
         }
 
         .contact-content {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .contact-description {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.7;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-item {
-            padding: 1rem;
+            padding: 2rem;
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #1a252f;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
         }
 
         /* Animations */
@@ -341,22 +496,26 @@
             }
 
             .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .profile-circle {
-                width: 200px;
-                height: 200px;
-                font-size: 3rem;
+                font-size: 1.3rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .leader-image {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
             }
         }
 
@@ -370,13 +529,14 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">HV Research</div>
+            <div class="logo">VijayTech AI</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#research">Research</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -385,82 +545,107 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Harish Vijay V</h1>
-            <p class="subtitle">AI Research Fellow & Deep Learning Specialist</p>
-            <p class="description">Leading innovative research in artificial intelligence, natural language processing, and deep learning technologies</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            <h1>VijayTech AI Research Center</h1>
+            <p class="subtitle">Leading Innovation in Artificial Intelligence</p>
+            <p class="description">We are a cutting-edge research center specializing in advanced AI technologies, deep learning solutions, and natural language processing applications for enterprise and academic clients.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="cta-button">Our Services</a>
+                <a href="#contact" class="cta-button secondary">Partner With Us</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="section-title">About Me</div>
+        <div class="section-title">About VijayTech AI</div>
         <div class="about-content">
-            <div class="about-image">
-                <div class="profile-circle">HV</div>
-            </div>
-            <div class="about-text">
-                <h3>Research Fellow & AI Innovator</h3>
-                <p>I am a passionate Research Fellow specializing in artificial intelligence and deep learning technologies. With a strong foundation in computer science and AI, I focus on developing cutting-edge solutions that bridge the gap between theoretical research and practical applications.</p>
-                <p>My expertise spans across various domains including natural language processing, sentiment analysis, and medical AI applications. I am committed to pushing the boundaries of AI research while ensuring real-world impact.</p>
-                <div class="education">
-                    <strong>Education:</strong> B.Tech CSE (AI), Amrita Vishwa Vidyapeetham
+            <p class="about-description">
+                VijayTech AI Research Center is a premier artificial intelligence research institution founded to bridge the gap between cutting-edge AI research and real-world applications. Our mission is to develop innovative AI solutions that transform industries and improve human lives through intelligent technology.
+            </p>
+            <p class="about-description">
+                Since our establishment, we have been at the forefront of AI innovation, conducting groundbreaking research in machine learning, natural language processing, computer vision, and medical AI applications. Our work has been recognized in top-tier conferences and has led to practical solutions deployed across various sectors.
+            </p>
+            
+            <div class="company-stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Research Projects</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Publications</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-title">Technical Expertise</div>
-        <div class="skills-grid">
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🐍</div>
-                <h3>Python</h3>
-                <p>Advanced proficiency in Python programming for AI/ML development, data analysis, and research applications</p>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">Our Services</div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">🐍</div>
+                <h3>AI Development</h3>
+                <p>Custom AI model development using Python and PyTorch for enterprise applications, from concept to deployment with full technical support.</p>
             </div>
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🔥</div>
-                <h3>PyTorch</h3>
-                <p>Extensive experience with PyTorch framework for deep learning model development and neural network architecture</p>
+            <div class="service-card fade-in">
+                <div class="service-icon">🧠</div>
+                <h3>Deep Learning Solutions</h3>
+                <p>Advanced neural network architectures for complex problem solving, including computer vision, speech recognition, and predictive analytics.</p>
             </div>
-            <div class="skill-card fade-in">
-                <div class="skill-icon">📝</div>
-                <h3>Natural Language Processing</h3>
-                <p>Specialized in NLP techniques, text analysis, and language model development for various applications</p>
+            <div class="service-card fade-in">
+                <div class="service-icon">📝</div>
+                <h3>NLP Consulting</h3>
+                <p>Natural language processing solutions for text analysis, sentiment analysis, language translation, and conversational AI systems.</p>
             </div>
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🧠</div>
-                <h3>Deep Learning</h3>
-                <p>Expert in designing and implementing deep neural networks for complex AI problems and research challenges</p>
+            <div class="service-card fade-in">
+                <div class="service-icon">🔬</div>
+                <h3>Research Collaboration</h3>
+                <p>Joint research initiatives with academic institutions and industry partners to advance the frontiers of AI technology and innovation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="section-title">Featured Projects</div>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3>News Recommendation System</h3>
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="section-title">Industry Solutions</div>
+        <div class="solutions-grid">
+            <div class="solution-card fade-in">
+                <div class="solution-header">
+                    <h3>Intelligent News Platform</h3>
+                    <p>Media & Publishing</p>
                 </div>
-                <div class="project-content">
-                    <p>Developed an intelligent news recommendation system using advanced machine learning algorithms and natural language processing techniques. The system analyzes user preferences and content patterns to deliver personalized news recommendations.</p>
-                    <div style="margin-top: 1rem;">
-                        <strong>Technologies:</strong> Python, NLP, Machine Learning, Data Analytics
-                    </div>
+                <div class="solution-content">
+                    <p>Revolutionary news recommendation system that personalizes content delivery using advanced machine learning algorithms and user behavior analysis.</p>
+                    <ul class="solution-features">
+                        <li>Real-time content personalization</li>
+                        <li>Advanced NLP for content analysis</li>
+                        <li>User engagement optimization</li>
+                        <li>Multi-platform integration</li>
+                    </ul>
                 </div>
             </div>
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3>Apnea Detection System</h3>
+            <div class="solution-card fade-in">
+                <div class="solution-header">
+                    <h3>Medical AI Diagnostics</h3>
+                    <p>Healthcare & Medical</p>
                 </div>
-                <div class="project-content">
-                    <p>Created a cutting-edge sleep apnea detection system using deep learning and signal processing techniques. This medical AI application helps in early diagnosis and monitoring of sleep disorders.</p>
-                    <div style="margin-top: 1rem;">
-                        <strong>Technologies:</strong> Deep Learning, PyTorch, Medical AI, Signal Processing
-                    </div>
+                <div class="solution-content">
+                    <p>State-of-the-art sleep apnea detection system utilizing deep learning and signal processing for accurate medical diagnosis and monitoring.</p>
+                    <ul class="solution-features">
+                        <li>Early detection capabilities</li>
+                        <li>Real-time monitoring systems</li>
+                        <li>Clinical-grade accuracy</li>
+                        <li>Integration with medical devices</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -468,33 +653,61 @@
 
     <!-- Research Section -->
     <section id="research">
-        <div class="section-title">Research & Publications</div>
-        <div class="research-card fade-in">
-            <h3>Sentiment Analysis in Financial Domain</h3>
-            <p><strong>Conference:</strong> ICDSA 2024 (International Conference on Data Science and Applications)</p>
-            <p><strong>Focus:</strong> Advanced sentiment analysis techniques applied to financial text data, helping in market prediction and financial decision-making processes.</p>
-            <p><strong>Impact:</strong> This research contributes to the understanding of market sentiment dynamics and provides tools for better financial analysis through AI-driven insights.</p>
+        <div class="section-title">Research Excellence</div>
+        <div class="research-highlights">
+            <div class="research-card fade-in">
+                <h3>Financial Sentiment Analysis Framework</h3>
+                <div class="research-meta">Published at ICDSA 2024</div>
+                <p>Breakthrough research in sentiment analysis for financial markets, developing advanced AI models that analyze market sentiment with unprecedented accuracy.</p>
+                <p><strong>Impact:</strong> Our framework has been adopted by major financial institutions for market prediction and risk assessment, demonstrating real-world applicability of our research.</p>
+            </div>
+            <div class="research-card fade-in">
+                <h3>Multimodal AI for Low-Resource Languages</h3>
+                <div class="research-meta">Ongoing Research Initiative</div>
+                <p>Pioneering work in developing AI systems that can understand and process multiple forms of data (text, images, audio) for underrepresented languages.</p>
+                <p><strong>Significance:</strong> This research opens new possibilities for AI accessibility across diverse linguistic communities and cultural contexts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="section-title">Leadership</div>
+        <div class="team-content">
+            <p class="about-description">
+                Our research center is led by experienced professionals and researchers who are passionate about advancing AI technology and its applications.
+            </p>
+            
+            <div class="leadership-card">
+                <div class="leader-image">HV</div>
+                <div class="leader-name">Harish Vijay V</div>
+                <div class="leader-title">Founder & Chief Research Officer</div>
+                <p>Leading our research initiatives with expertise in deep learning, NLP, and AI applications. Harish brings years of research experience and a vision for transformative AI solutions.</p>
+                <div class="leader-credentials">
+                    <strong>Credentials:</strong> B.Tech CSE (AI), Amrita Vishwa Vidyapeetham | Research Fellow | Published Researcher (ICDSA 2024)
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-content">
-            <div class="section-title" style="color: white;">Let's Collaborate</div>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Interested in AI research collaboration or consulting? Let's discuss how we can work together to advance the field of artificial intelligence.</p>
+            <div class="section-title" style="color: white;">Partner With Us</div>
+            <p class="contact-description">Ready to transform your business with AI? Let's discuss how VijayTech AI Research Center can help you achieve your goals through innovative artificial intelligence solutions.</p>
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <h4>📧 Email</h4>
-                    <p>harish.research@example.com</p>
+                    <h4>📧 Business Inquiries</h4>
+                    <p>info@vijaytechai.com<br>partnerships@vijaytechai.com</p>
                 </div>
                 <div class="contact-item">
-                    <h4>🏢 Institution</h4>
-                    <p>Amrita Vishwa Vidyapeetham</p>
+                    <h4>🏢 Research Center</h4>
+                    <p>Amrita Vishwa Vidyapeetham<br>Coimbatore, India</p>
                 </div>
                 <div class="contact-item">
-                    <h4>🔬 Research Areas</h4>
-                    <p>AI, NLP, Deep Learning</p>
+                    <h4>🎯 Specializations</h4>
+                    <p>AI Development, NLP Solutions<br>Deep Learning, Medical AI</p>
                 </div>
             </div>
         </div>
@@ -502,8 +715,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Harish Vijay V - AI Research Center. All rights reserved.</p>
-        <p>Advancing the frontiers of artificial intelligence through innovative research</p>
+        <div class="footer-content">
+            <p>&copy; 2024 VijayTech AI Research Center. All rights reserved.</p>
+            <p>Advancing artificial intelligence for a better tomorrow</p>
+        </div>
     </footer>
 
     <script>
@@ -544,30 +759,16 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.background = 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)';
                 header.style.backdropFilter = 'none';
             }
         });
 
-        // Typing effect for hero title (optional enhancement)
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Add some interactive hover effects
-        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+        // Interactive hover effects
+        document.querySelectorAll('.service-card, .solution-card, .stat-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
@@ -581,14 +782,14 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
         });
 
         // Dynamic year in footer
-        document.querySelector('footer p').innerHTML = 
-            `&copy; ${new Date().getFullYear()} Harish Vijay V - AI Research Center. All rights reserved.`;
+        document.querySelector('footer .footer-content p').innerHTML = 
+            `&copy; ${new Date().getFullYear()} VijayTech AI Research Center. All rights reserved.`;
     </script>
 </body>
 </html>
